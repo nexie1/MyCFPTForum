@@ -3,7 +3,7 @@
  * Auteur       : Fernandes Marco
  * Description  : Forum du CFPT
  * Version      : 1.0.0
- * Date         : 08.05.2019
+ * Date         : 07.05.2019
  * Copyright    : Fernandes Marco
  */
 ?>
@@ -13,19 +13,19 @@
             <table>
                 <tr>
                     <td>Pseudo</td>
-                    <td><input name="pseudo" type="text" placeholder="Entrez un username" value="" required tabindex="1"></td>
+                    <td><input name="pseudo" type="text" placeholder="Entrez un username" value="<?= $info["pseudo"]; ?>" required tabindex="1"></td>
                 </tr>
                 <tr>
                     <td>Nom</td>
-                    <td><input name="last_name" type="text" placeholder="Entrez votre nom" value="" required tabindex="2"></td>
+                    <td><input name="last_name" type="text" placeholder="Entrez votre nom" value="<?= $info["last_name"]; ?>" required tabindex="2"></td>
                 </tr>
                 <tr>
                     <td>Prénom</td>
-                    <td><input name="first_name" type="text" placeholder="Entrez votre prénom" value="" required tabindex="3"></td>
+                    <td><input name="first_name" type="text" placeholder="Entrez votre prénom" value="<?= $info["first_name"]; ?>" required tabindex="3"></td>
                 </tr>
                 <tr>
-                    <td>Courriel</td>
-                    <td><input name="email" type="email" placeholder="Entrez votre email" value="" required tabindex="4"></td>
+                    <td>Email</td>
+                    <td><input name="email" type="email" placeholder="Entrez votre email" value="<?= $info["email"]; ?>" required tabindex="4"></td>
                 </tr>
                 <tr>
                     <td>Mot de passe</td>
@@ -40,7 +40,7 @@
                         <label for="captcha"><img src="captcha.php" alt="Captcha" /></label>
                     </td>   
 
-                    <TD><input placeholder="Entrez le captcha" type = "text" name = "CopyCaptcha" value="" required tabindex="7" /></TD>
+                    <TD><input placeholder="Entrez le captcha" type = "text" name = "CopieCaptcha" value="" required tabindex="7" /></TD>
                 </TR>
                 <tr>
                     <td><input type="submit" name="Submit" value="Créer un compte" tabindex="8"></td>
@@ -59,7 +59,7 @@
             if ($_SESSION["CreationInscr"] == "Incomplete") {
                 echo '<p style="color:red;">Le captcha ou vos mots de passe ne correspondent pas!</p>';
             }
-            //Si l'utilisateur ne marque pas d'adresse eduge il est marqué Veuillez utilisez une adresse eduge.ch
+            //Si l'utilisateur n'utilise pas d'adresse eduge il est marqué Veuillez utilisez une adresse eduge.ch
             if ($_SESSION["CreationInscr"] == "Incorrect") {
                 echo '<p style="color:red;">Veuillez utilisez une adresse eduge.ch</p>';
             }
@@ -67,3 +67,6 @@
         </article>
     </section>
 </form>
+
+
+
