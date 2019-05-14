@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Auteur       : Fernandes Marco
  * Description  : Forum du CFPT

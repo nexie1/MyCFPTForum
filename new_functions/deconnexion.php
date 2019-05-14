@@ -7,7 +7,5 @@
  * Copyright    : Fernandes Marco
  */
 session_destroy();
-header("location: index.php?page=Index");
-
-
-
+header("Location: index.php?page=Index");
+?>

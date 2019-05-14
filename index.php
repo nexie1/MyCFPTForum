@@ -15,6 +15,8 @@ require_once './new_functions/pdoConnection.php';
 require_once './new_functions/fonctionDatabase.php';
 require_once './new_functions/checkFom.php';
 require_once './new_functions/login.php';
+require_once './new_functions/addCom.php';
+require_once './new_functions/addArt.php';
 
 //include..
 include './new_includes/head.inc.php';
@@ -41,11 +43,31 @@ switch ($page) {
     case "deco":
         include_once './new_functions/deconnexion.php';
         break;
+    default :
     case "Index":
         include './new_includes/article.inc.php';
         break;
     case "MesArticles":
         include './new_includes/article.inc.php';
         break;
+    case "afficheArticleById":
+        $id = $_GET["idArt"];
+        $resultArt = selectArticleById($id);
+        $resultCom = selectAllComByArticle($id);
+        include './new_includes/displayArticle.php';
+        break;
+    case "displayAllArticlesByTopics":
+        $idTopic = filter_input(INPUT_GET, "id_topic", FILTER_SANITIZE_NUMBER_INT);
+        $selectArtByTopics = selectAllArticleByTopics($idTopic);
+        include './new_includes/displayAllArticlesByTopics.php';
+
+        break;
+    case "CreerArticle":
+        $id_topic = $_GET["id_topic"];
+        $topic = $_GET["page"];
+        include './new_includes/formArticle.inc.php';
+
+        break;
 }
 include './new_includes/footer.inc.php';
+?>

@@ -18,7 +18,7 @@ article{
 }
 
 .insideArt{   
-    margin: 1% 1% 1% 1%;  
+    margin-left: 1%; 
 }
 .bordure {   
     border-bottom:1px solid black;
@@ -118,7 +118,7 @@ footer {
 
 .navbar-content
 { 
-    width:120px;
+    width:320px;
     padding: 15px;
     padding-bottom:0px;
 }
@@ -134,8 +134,7 @@ footer {
 }
 .navbar-footer-content { padding:15px 15px 15px 15px; }
 .dropdown-menu {
-    
+
     padding: 0px;
     overflow: hidden;
 }
-

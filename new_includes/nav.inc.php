@@ -48,7 +48,8 @@
             </li>
         </ul>
     </div>
-    <ul class="nav navbar-nav navbar-right">
+      
+    <!--<ul class="nav navbar-nav navbar-right">
         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
                     <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" class="img-responsive img-circle" title="John Doe" alt="John Doe" width="30px" height="30px">
@@ -94,6 +95,6 @@
                 </li>
             </ul>
         </li>
-    </ul>
+    </ul>-->  
+    
 </nav>
-

@@ -20,3 +20,12 @@ $info[$FIRST_NAME] = (isset($_POST[$FIRST_NAME]) ? filter_var($_POST[$FIRST_NAME
 $info[$EMAIL] = (isset($_POST[$EMAIL]) ? filter_var($_POST[$EMAIL], FILTER_SANITIZE_STRING) : "");
 $info[$PASSWORD] = (isset($_POST[$PASSWORD]) ? hash("sha1", filter_var($_POST[$PASSWORD], FILTER_SANITIZE_STRING)) : "");
 
+$TITRE_ART = "title";
+$CONTENU_ART = "content";
+$STATUT_ART = "is_active";
+$DATE_ART = "creation_date";
+
+$article[$TITRE_ART] = (isset($_POST[$TITRE_ART]) ? filter_var($_POST[$TITRE_ART], FILTER_SANITIZE_STRING) : "");
+$article[$CONTENU_ART] = (isset($_POST[$CONTENU_ART]) ? filter_var($_POST[$CONTENU_ART], FILTER_SANITIZE_STRING) : "");
+$article[$STATUT_ART] = (isset($_POST[$STATUT_ART]) ? filter_var($_POST[$STATUT_ART], FILTER_VALIDATE_INT) : "");
+$article[$DATE_ART] = date('Y-m-d');

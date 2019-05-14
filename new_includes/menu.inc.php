@@ -17,7 +17,7 @@ if (isset($_SESSION["is_admin"])) {
 <nav class="nav-side-menu bg-dark text-white">
     <div class="text-white bg-dark brand">
         <?php if (isset($_SESSION["Connected"])) { ?>
-            <p style="color:green;">Connecté : <strong> <?= $_SESSION["pseudo"] ?></strong></p>
+            <p style="color:green; font-size: 12px;">Connecté : <strong> <?= $_SESSION["pseudo"] ?></strong></p>
         <?php } ?>
     </div>
 
@@ -30,16 +30,25 @@ if (isset($_SESSION["is_admin"])) {
                 $tableTopic = getTopics();
                 foreach ($tableTopic as $value) {
                     ?> 
-            <li><a class="fontSize" href="index.php?page=<?= $value["title"] ?>&id_topic=<?= $value["id_topic"] ?>"><?= $value["title"] ?></a></li> 
+                    <li><a class="fontSize" href="index.php?page=displayAllArticlesByTopics&nameTopic=<?= $value["title_topic"] ?>&id_topic=<?= $value["id_topic"] ?>"><?= $value["title_topic"] ?></a></li> 
                     <?php
                     $topicId = $value["id_topic"];
                 }
-                ?>                 
+                ?>
+
                 <br><br><br>
 
-                <form method="POST" action="#"><li><a class="fontSize" href="index.php?page=deco"><i class="fa fa-user fa-lg"></i> Se déconnecter</a></li></form>
-                <?php
-            } ?>
+                <?php if ($_GET["page"] == "displayAllArticlesByTopics") { ?>
+                    <li><a href="index.php?page=CreerArticle&topic=<?= $_GET["nameTopic"] ?>&id_topic=<?= $_GET["id_topic"] ?>">Créer un article</a></li>
+                <?php } ?>
+
+                <li><a href="index.php?page=deco"><i class="fa fa-user fa-lg"></i> Se déconnecter</a></li>
+                    <?php
+                }
+                //if ($is_admin == 2) {
+                ?>
+            <!--<li><a href="index.php?page=DeleteAllArticles&HideAllArticles"><i class="fa fa-user fa-lg"></i> Supprime tous les articles</a></li>-->
+            <?php //} ?>
         </ul>
     </div>
 </nav>
