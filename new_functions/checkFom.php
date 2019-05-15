@@ -4,7 +4,7 @@
  * Auteur       : Fernandes Marco
  * Description  : Forum du CFPT
  * Version      : 1.0.0
- * Date         : 08.05.2019
+ * Date         : 07.05.2019
  * Copyright    : Fernandes Marco
  */
 
@@ -14,10 +14,10 @@ if (isset($_POST["Submit"])) {
 
     //Si l'utilisateur ne rentre pas @eduge.ch alors l'incription est incorrecte
     if (preg_match("/\S+@eduge.ch/", $_POST["email"])) {
-       
+
         //met le mail dans un tableau
         $info["email"] = $_POST["email"];
-         //Verifie si les 2 mots de passes sont égaux + captcha  
+        //Verifie si les 2 mots de passes sont égaux + captcha  
         if ($_POST["CopyCaptcha"] == $_SESSION['captcha']) {
             if ($_POST["password"] == $_POST["passwordConfirm"]) {
 
@@ -33,8 +33,7 @@ if (isset($_POST["Submit"])) {
             //Alerte pour dire que le formulaire est incomplet ou faux
             $_SESSION["CreationInscr"] = "Incomplete";
         }
-    }
-    else {
+    } else {
         //Alerte pour dire que le formulaire est incorrecte
         $_SESSION["CreationInscr"] = "Incorrect";
     }

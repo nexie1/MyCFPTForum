@@ -6,11 +6,6 @@
  * Date         : 07.05.2019
  * Copyright    : Fernandes Marco
  */
-//Quand il est connecté il peut creer des commentaires sinon il est redirigé
-/* if (!isset($_SESSION["Connected"])) {
-
-  header('Location: index.php?page=Index');
-  } */
 ?>
 <h4>Laisse un commentaire</h4>
 <form method="POST" role="form" action="#">

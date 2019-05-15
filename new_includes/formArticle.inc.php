@@ -6,11 +6,12 @@
  * Date         : 07.05.2019
  * Copyright    : Fernandes Marco
  */
+
 //Quand il est connecté il peut creer des articles sinon il est redirigé
-/*if (!isset($_SESSION["Connected"])) {
+if (!isset($_SESSION["Connected"])) {
 
     header('Location: index.php?page=Index');
-}*/
+}
 ?>
 <form method="POST" action="#">
     <section>

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Auteur       : Fernandes Marco
  * Description  : Forum du CFPT
@@ -6,10 +7,7 @@
  * Date         : 07.05.2019
  * Copyright    : Fernandes Marco
  */
-?>
-<body style=" background-color: #F1E5E5;">
-    <header>
-    </header>
-    
-    
-    
+if (isset($_POST["ValidModifArticle"])) {
+    UpdateModifiedArticlesUserById($infoModifArticles);
+    header('Location: ./index.php?page=MesArticles');
+}
