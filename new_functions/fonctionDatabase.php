@@ -63,7 +63,7 @@ function getTopics() {
  */
 function getArticlesPublic() {
     try {
-        $sql = "SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` WHERE `articles`.`is_active` = 1 LIMIT 5";
+        $sql = "SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` WHERE `articles`.`is_active` = 1 AND `users`.`is_active` = 1 ORDER BY creation_date ASC LIMIT 5";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->execute();
         return $dbQuery->fetchAll(PDO::FETCH_ASSOC);
@@ -78,7 +78,7 @@ function getArticlesPublic() {
  */
 function getArticlesUser($idUtilisateur) {
     try {
-        $sql = "SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` WHERE `users`.id_user = :id_user AND `articles`.`is_active` = 1";
+        $sql = "SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` WHERE `users`.id_user = :id_user AND  `articles`.`is_active` = 1";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_user', $idUtilisateur);
         $dbQuery->execute();
@@ -164,6 +164,7 @@ function selectAllArticleByTopics($idTopic) {
         $sql = 'SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` 
             LEFT JOIN `topics` ON `articles`.`id_topic` = `topics`.`id_topic` 
             WHERE `articles`.`is_active` = "1" 
+            AND `users`.`is_active` = 1
             AND `topics`.`id_topic` = :idTopic';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':idTopic', $idTopic);
@@ -276,8 +277,7 @@ function UpdateModifiedProfile($infoProfile) {
 }
 
 function displayProfile($displayByPseudo) {
-
-        try {
+    try {
         $sql = "SELECT * FROM `users` WHERE pseudo = :pseudo";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':pseudo', $displayByPseudo);
@@ -286,5 +286,36 @@ function displayProfile($displayByPseudo) {
     } catch (PDOException $e) {
         die('Erreur : ' . $e->getMessage());
     }
-    
+}
+
+function DeleteAllArticles() {
+    try {
+        $sql = 'UPDATE `articles` SET`is_active`= "1" WHERE 1';
+        $dbQuery = EDatabase::getInstance()->prepare($sql);
+        $dbQuery->execute();
+    } catch (PDOException $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
+
+function ban($ban) {
+    try {
+        $sql = 'UPDATE `users` SET `is_active`= 0 WHERE id_user = :id_user';
+        $dbQuery = EDatabase::getInstance()->prepare($sql);
+        $dbQuery->bindParam(':id_user', $ban);
+        $dbQuery->execute();
+    } catch (PDOException $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+}
+
+function unban($unban) {
+    try {
+        $sql = 'UPDATE `users` SET `is_active`= 1 WHERE id_user = :id_user';
+        $dbQuery = EDatabase::getInstance()->prepare($sql);
+        $dbQuery->bindParam(':id_user', $unban);
+        $dbQuery->execute();
+    } catch (PDOException $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
 }

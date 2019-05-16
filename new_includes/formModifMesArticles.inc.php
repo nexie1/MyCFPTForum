@@ -17,11 +17,11 @@
                 <table>
                     <tr>
                         <td>Titre Article</td>                     
-                        <td><input name="titreModifArticles" type="text" placeholder=" Titre de l'article" value="<?= $value["title"] ?>"></td>
+                        <td><input required="true" name="titreModifArticles" type="text" placeholder=" Titre de l'article" value="<?= $value["title"] ?>"></td>
                     </tr>
                     <tr>
                         <td>Contenu</td>
-                        <td><textarea style="width: 300px; height: 300px;" name="contenuModifArticles" placeholder="Contenu de l'article"><?= $value["content"] ?></textarea></td>
+                        <td><textarea style="width: 300px; height: 300px;"required="true" name="contenuModifArticles" placeholder="Contenu de l'article"><?= $value["content"] ?></textarea></td>
                     </tr>
                     <tr>
                         <td>idArt</td>

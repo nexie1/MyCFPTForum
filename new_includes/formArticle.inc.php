@@ -8,13 +8,18 @@
  */
 
 //Quand il est connecté il peut creer des articles sinon il est redirigé
-if (!isset($_SESSION["Connected"])) {
+if (!isset($_SESSION["Connected"]) && $is_active == 1) {
 
     header('Location: index.php?page=Index');
 }
 ?>
 <form method="POST" action="#">
     <section>
+        <article>
+            <div id="titleTopic" class="insideArt col-sm-9">
+                <h2><?= $_GET["nameTopic"] ?></h3>
+            </div>
+        </article>
         <article>
             <br>
             <table class="insideArt">

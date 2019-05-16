@@ -13,7 +13,7 @@ if (isset($_POST["SubCommentaire"])) {
     //Verifie si commentaire n'es pas vide
     if ($_POST["commentaire"] != "") {
         //ajoute la date précise de l'instant où on a cliquer sur le bouton
-        $date = date("Y-m-d H:i");
+        $date = date("Y-m-d H:i:s");
         //prend l'id de l'article
         $info["id_article"] = $_GET['idArt'];
         //prend le contenu du commentaire

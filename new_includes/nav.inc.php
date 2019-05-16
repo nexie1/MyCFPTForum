@@ -8,7 +8,7 @@
  */
 ?>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="index.php?page=Index"><img src="./image/logoCfpt.png" alt="logo" style="width:40px;"></a>
+    <a class="navbar-brand" href="index.php?page=Index"><img src="./image/logoCfpt.png" alt="logo" style="width:120px;"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -49,7 +49,7 @@
                                     <span class="fontSize"><?= $_SESSION["pseudo"]; ?></span>
                                     <p class="text-muted small"><?= $_SESSION["email"]; ?></p>
                                     <hr id="espacement">
-                                    <a href="index.php?page=privateProfile"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a>
+                                    <a href="index.php?page=privateProfile"><i class="fa fa-user-o" aria-hidden="true"></i> Profil</a>
                                 </div>
                             </div>
                         </div>

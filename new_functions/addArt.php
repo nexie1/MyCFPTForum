@@ -14,8 +14,12 @@ if (isset($_POST["SubArticle"])) {
     $id = $_GET["id_topic"];
     //prend la page sur laquelle on était juste avant
     $oldPage = $_GET["oldPage"];
+
+    $nameTopic = $_GET["nameTopic"];
+    $date = date("Y-m-d H:i:s");
+    $article["creation_date"] = $date;
     //ajoute l'article
     addArticle($article, $id);
     //redirige sur la page ou on était juste avant
-    header('Location: ./index.php?page=' . $oldPage . '&id_topic=' . $id);
+    header('Location: ./index.php?page=' . $oldPage . '&nameTopic=' . $nameTopic . '&id_topic=' . $id);
 }

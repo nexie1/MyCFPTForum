@@ -17,8 +17,9 @@ if (isset($_POST["Submit"])) {
 
         //met le mail dans un tableau
         $info["email"] = $_POST["email"];
+        
         //Verifie si les 2 mots de passes sont égaux + captcha  
-        if ($_POST["CopyCaptcha"] == $_SESSION['captcha']) {
+        if ($_POST["CopieCaptcha"] == $_SESSION['captcha']) {
             if ($_POST["password"] == $_POST["passwordConfirm"]) {
 
                 //Ajoute l'utilisateur

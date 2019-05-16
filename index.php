@@ -9,24 +9,8 @@
  */
 session_start();
 
-//fonctions..
-require_once './new_functions/filter_input.php';
 require_once './new_functions/pdoConnection.php';
 require_once './new_functions/fonctionDatabase.php';
-require_once './new_functions/checkFom.php';
-require_once './new_functions/login.php';
-require_once './new_functions/addCom.php';
-require_once './new_functions/addArt.php';
-require_once './new_functions/modifiedProfile.php';
-require_once './new_functions/modifiedArticle.php';
-require_once './new_functions/modifiedComment.php';
-
-
-//include..
-include './new_includes/head.inc.php';
-include './new_includes/header.inc.php';
-include './new_includes/nav.inc.php';
-include './new_includes/menu.inc.php';
 
 //Au chargement du site met la page index en paramètre GET pour que le switch fonctionne
 $page = (isset($_GET['page']) ? $page = $_GET['page'] : $page = "");
@@ -35,6 +19,48 @@ $page = (isset($_GET['page']) ? $page = $_GET['page'] : $page = "");
 if ($page == "") {
     $page = "Index";
 }
+
+switch ($page) {
+    case "deco":
+        include_once './new_functions/deconnexion.php';
+        break;
+    case "DeleteAllArticles":
+        DeleteAllArticles($_GET["HideAllArticles"]);
+        header('Location: ./index.php?page=Index');
+        break;
+    case "DeleteArticle":
+        if (isset($_GET["DeleteArticleById"])) {
+            DeleteArticleById($_GET["DeleteArticleById"]);
+            header('Location: ./index.php?page=MesArticles');
+        }
+        break;
+    case "DeleteComments":
+        if (isset($_GET["DeleteCommentsId"]) && $_GET["OldIdArt"]) {
+            DeleteCommentById($_GET["DeleteCommentsId"]);
+            header('Location: ./index.php?page=afficheArticleById&idArt=' . $_GET["OldIdArt"]);
+        }
+        break;
+}
+
+//fonctions..
+require_once './new_functions/filter_input.php';
+require_once './new_functions/checkFom.php';
+require_once './new_functions/login.php';
+require_once './new_functions/addCom.php';
+require_once './new_functions/addArt.php';
+require_once './new_functions/modifiedProfile.php';
+require_once './new_functions/modifiedArticle.php';
+require_once './new_functions/modifiedComment.php';
+require_once './new_functions/banUnban.php';
+
+
+//include..
+include './new_includes/head.inc.php';
+include './new_includes/header.inc.php';
+include './new_includes/nav.inc.php';
+include './new_includes/menu.inc.php';
+
+
 
 //Switch de changement de page
 switch ($page) {
@@ -60,7 +86,7 @@ switch ($page) {
         $resultCom = selectAllComByArticle($idArt);
         include './new_includes/displayArticle.php';
         break;
-    case "displayAllArticlesByTopics":
+    case "displayArtByTopics":
         $idTopic = filter_input(INPUT_GET, "id_topic", FILTER_SANITIZE_NUMBER_INT);
         $selectArtByTopics = selectAllArticleByTopics($idTopic);
         include './new_includes/displayAllArticlesByTopics.php';
@@ -70,32 +96,15 @@ switch ($page) {
         $topic = $_GET["page"];
         include './new_includes/formArticle.inc.php';
         break;
-    case "DeleteAllArticles":
-        CacheAllArticles($_GET["HideAllArticles"]);
-        header('Location: ./index.php?page=Index');
-        break;
     case "ModifArticles":
         $id_article = $_GET["idModifMyArticle"];
         $tableArticlesUser = getModifArticlesUserById($id_article);
         include './new_includes/formModifMesArticles.inc.php';
         break;
-    case "DeleteArticle":
-        if (isset($_GET["DeleteArticleById"])) {
-            DeleteArticleById($_GET["DeleteArticleById"]);
-            header('Location: ./index.php?page=MesArticles');
-        }
-        break;
     case "ModifComments":
         $id_comment = $_GET["idModifComments"];
         $tableCommentsUser = getModifCommentsUserById($id_comment);
         include './new_includes/formModifMesCommentaires.inc.php';
-        break;
-
-    case "DeleteComments":
-        if (isset($_GET["DeleteCommentsId"]) && $_GET["OldIdArt"]) {
-            DeleteCommentById($_GET["DeleteCommentsId"]);
-            header('Location: ./index.php?page=afficheArticleById&idArt=' . $_GET["OldIdArt"]);
-        }
         break;
     case "privateProfile":
         $pseudoPriveProfile = $_SESSION["pseudo"];

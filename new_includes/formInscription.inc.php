@@ -24,7 +24,7 @@
                     <td><input name="first_name" type="text" placeholder="Entrez votre prénom" value="<?= $info["first_name"]; ?>" required tabindex="3"></td>
                 </tr>
                 <tr>
-                    <td>Email</td>
+                    <td>Email eduge</td>
                     <td><input name="email" type="email" placeholder="Entrez votre email" value="<?= $info["email"]; ?>" required tabindex="4"></td>
                 </tr>
                 <tr>

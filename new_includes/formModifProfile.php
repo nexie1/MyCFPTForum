@@ -57,7 +57,7 @@
                                         <div class="col-xs-12">
                                             <br>
                                             <button class="btn btn-lg btn-success" type="submit" name="ValidModifProfile"><i class="glyphicon glyphicon-ok-sign"></i> Sauvegarder</button>
-                                            <a href="index.php?page=profile"><i class="fa fa-user fa-lg"></i> Retour</a>
+                                            <a href="index.php?page=privateProfile"><i class="fa fa-user fa-lg"></i> Retour</a>
                                         </div>
                                     </div>
                                 </form>

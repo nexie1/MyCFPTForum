@@ -16,12 +16,8 @@ if (isset($_POST["Login"])) {
         $_SESSION["is_admin"] = getUser($info)["is_admin"];
         $_SESSION["email"] = $info["email"];
         $_SESSION["pseudo"] = getUser($info)["pseudo"];
-
-        /* $_SESSION["first_name"] = getUser($info)["first_name"];
-          $_SESSION["last_name"] = getUser($info)["last_name"];
-          $_SESSION["id_user"] = getUser($info)["id_user"]; */
-
-
+        $_SESSION["is_active"] = getUser($info)["is_active"];
+        
         header('Location:  index.php?page=Index');
     }
 }
