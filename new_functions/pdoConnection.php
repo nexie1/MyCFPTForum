@@ -8,6 +8,8 @@
  */
 require_once 'constantConnexion.php';
 
+//Garantie une seule instance de la classe et retourne une instance d'objet
+
 class EDatabase {
 
     private static $pdoInstance;

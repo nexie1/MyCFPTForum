@@ -14,7 +14,8 @@
  */
 function addUser($info) {
     try {
-        $sql = "INSERT INTO `users`(`pseudo`, `last_name`, `first_name`, `email`, `password`, `is_admin`, `is_active`) VALUES (:pseudo, :last_name, :first_name, :email, :password,1,1)";
+        $sql = "INSERT INTO `users`(`pseudo`, `last_name`, `first_name`, `email`, `password`, `is_admin`, `is_active`) "
+                . "VALUES (:pseudo, :last_name, :first_name, :email, :password,1,1)";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':pseudo', $info["pseudo"]);
         $dbQuery->bindParam(':last_name', $info["last_name"]);
@@ -34,7 +35,8 @@ function addUser($info) {
  */
 function getUser($info) {
     try {
-        $sql = "SELECT * FROM `users` WHERE email = :email";
+        $sql = "SELECT * FROM `users` "
+                . "WHERE email = :email";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':email', $info["email"]);
         $dbQuery->execute();
@@ -45,7 +47,7 @@ function getUser($info) {
 }
 
 /**
- * Fonction qui récupère tout les topics de la base de données
+ * Fonction qui récupère tous les topics de la base de données
  */
 function getTopics() {
     try {
@@ -63,7 +65,11 @@ function getTopics() {
  */
 function getArticlesPublic() {
     try {
-        $sql = "SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` WHERE `articles`.`is_active` = 1 AND `users`.`is_active` = 1 ORDER BY creation_date ASC LIMIT 5";
+        $sql = "SELECT * FROM `articles` "
+                . "LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` "
+                . "WHERE `articles`.`is_active` = 1 "
+                . "AND `users`.`is_active` = 1 "
+                . "ORDER BY creation_date ASC LIMIT 5";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->execute();
         return $dbQuery->fetchAll(PDO::FETCH_ASSOC);
@@ -73,12 +79,15 @@ function getArticlesPublic() {
 }
 
 /**
- * Fonction qui récupère tout les articles de l'utilisateur connécté
+ * Fonction qui récupère tous les articles de l'utilisateur connecté
  * @param $idUtilisateur qui contient l'id de l'utilisateur pour pouvoir selectionner les articles le correspondant
  */
 function getArticlesUser($idUtilisateur) {
     try {
-        $sql = "SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` WHERE `users`.id_user = :id_user AND  `articles`.`is_active` = 1";
+        $sql = "SELECT * FROM `articles` "
+                . "LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` "
+                . "WHERE `users`.id_user = :id_user "
+                . "AND  `articles`.`is_active` = 1";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_user', $idUtilisateur);
         $dbQuery->execute();
@@ -94,7 +103,10 @@ function getArticlesUser($idUtilisateur) {
  */
 function selectArticleById($idArt) {
     try {
-        $sql = "SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` WHERE id_article = :id_article AND `articles`.`is_active` = 1";
+        $sql = "SELECT * FROM `articles` "
+                . "LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` "
+                . "WHERE id_article = :id_article "
+                . "AND `articles`.`is_active` = 1";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_article', $idArt);
         $dbQuery->execute();
@@ -110,7 +122,8 @@ function selectArticleById($idArt) {
  */
 function addCom($info) {
 
-    $sql = "INSERT INTO `comments`(`id_comment`,`content`,`creation_date`,`id_user`,`id_article`) VALUES ('',:content,:creation_date,:id_user,:id_article)";
+    $sql = "INSERT INTO `comments`(`id_comment`,`content`,`creation_date`,`id_user`,`id_article`) "
+            . "VALUES ('',:content,:creation_date,:id_user,:id_article)";
     $dbQuery = EDatabase::getInstance()->prepare($sql);
 
     $dbQuery->bindParam(':content', $info["content"]);
@@ -128,7 +141,9 @@ function addCom($info) {
  */
 function selectAllComByArticle($idArt) {
     try {
-        $sql = "SELECT * FROM `comments` LEFT JOIN `users` ON `comments`.`id_user` = `users`.`id_user` WHERE id_article = :id_article";
+        $sql = "SELECT * FROM `comments` "
+                . "LEFT JOIN `users` ON `comments`.`id_user` = `users`.`id_user` "
+                . "WHERE `id_article` = :id_article AND `users`.`is_active` = 1";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_article', $idArt);
         $dbQuery->execute();
@@ -145,7 +160,8 @@ function selectAllComByArticle($idArt) {
  */
 function addArticle($article, $id_topic) {
     try {
-        $sql = "INSERT INTO `articles`(`title`, `content`, `creation_date`,`id_topic`,`id_user`,`is_active`) VALUES (:title, :content, :creation_date,:id_topic,:id_user,1)";
+        $sql = "INSERT INTO `articles`(`title`, `content`, `creation_date`,`id_topic`,`id_user`,`is_active`) "
+                . "VALUES (:title, :content, :creation_date,:id_topic,:id_user,1)";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':title', $article["title"]);
         $dbQuery->bindParam(':content', $article["content"]);
@@ -159,9 +175,15 @@ function addArticle($article, $id_topic) {
     }
 }
 
+/**
+ * Fonction qui affiche tous les articles par topic
+ * @param type $idTopic variable qui contient l'id du topic
+ * @return array
+ */
 function selectAllArticleByTopics($idTopic) {
     try {
-        $sql = 'SELECT * FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` 
+        $sql = 'SELECT * FROM `articles` 
+            LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id_user` 
             LEFT JOIN `topics` ON `articles`.`id_topic` = `topics`.`id_topic` 
             WHERE `articles`.`is_active` = "1" 
             AND `users`.`is_active` = 1
@@ -175,9 +197,14 @@ function selectAllArticleByTopics($idTopic) {
     }
 }
 
+/**
+ * Fonction qui supprime l'article par l'id
+ * @param type $idArt
+ */
 function DeleteArticleById($idArt) {
     try {
-        $sql = 'UPDATE `articles` SET`is_active`= "2" WHERE `id_article`= :id_article ';
+        $sql = 'UPDATE `articles` SET`is_active`= "2" '
+                . 'WHERE `id_article`= :id_article ';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_article', $idArt);
         $dbQuery->execute();
@@ -185,10 +212,15 @@ function DeleteArticleById($idArt) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui prend les infos de l'articles par l'id (pour la modification)
+ * @param type $idArticles
+ * @return array
+ */
 function getModifArticlesUserById($idArticles) {
     try {
-        $sql = "SELECT * FROM `articles` WHERE id_article = :id_article";
+        $sql = "SELECT * FROM `articles` "
+                . "WHERE id_article = :id_article";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_article', $idArticles);
         $dbQuery->execute();
@@ -197,11 +229,15 @@ function getModifArticlesUserById($idArticles) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui modifie l'article par son Id
+ * @param type $infoModifArticles
+ */
 function UpdateModifiedArticlesUserById($infoModifArticles) {
 
     try {
-        $sql = 'UPDATE `articles` SET `title`= :title ,`content`= :content WHERE id_article = :id_article';
+        $sql = 'UPDATE `articles` SET `title`= :title ,`content`= :content '
+                . 'WHERE id_article = :id_article';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_article', $infoModifArticles["idModifArticles"]);
         $dbQuery->bindParam(':title', $infoModifArticles["titreModifArticles"]);
@@ -211,10 +247,15 @@ function UpdateModifiedArticlesUserById($infoModifArticles) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui prend les infos du commentaire par l'id (pour la modification)
+ * @param type $idComments
+ * @return array
+ */
 function getModifCommentsUserById($idComments) {
     try {
-        $sql = "SELECT * FROM `comments` WHERE id_comment = :id_comment";
+        $sql = "SELECT * FROM `comments` "
+                . "WHERE id_comment = :id_comment";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_comment', $idComments);
         $dbQuery->execute();
@@ -224,10 +265,15 @@ function getModifCommentsUserById($idComments) {
     }
 }
 
+/**
+ * Fonction qui modifie le commentaire par son Id
+ * @param type $infoModifComments
+ */
 function UpdateModifiedCommentsUserById($infoModifComments) {
 
     try {
-        $sql = 'UPDATE `comments` SET `content`= :content WHERE id_comment = :id_comment';
+        $sql = 'UPDATE `comments` SET `content`= :content '
+                . 'WHERE id_comment = :id_comment';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_comment', $infoModifComments["idModifComments"]);
         $dbQuery->bindParam(':content', $infoModifComments["contenuModifComments"]);
@@ -236,10 +282,14 @@ function UpdateModifiedCommentsUserById($infoModifComments) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui supprime le commentaire par son Id
+ * @param type $idCom
+ */
 function DeleteCommentById($idCom) {
     try {
-        $sql = 'DELETE FROM `comments` WHERE `id_comment`= :id_comment';
+        $sql = 'DELETE FROM `comments` '
+                . 'WHERE `id_comment`= :id_comment';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_comment', $idCom);
         $dbQuery->execute();
@@ -247,11 +297,16 @@ function DeleteCommentById($idCom) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui affiche le profil par l'id
+ * @param type $id_user
+ * @return array
+ */
 function displayProfileById($id_user) {
 
     try {
-        $sql = "SELECT * FROM `users` WHERE id_user = :id_user";
+        $sql = "SELECT * FROM `users` "
+                . "WHERE id_user = :id_user";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_user', $id_user);
         $dbQuery->execute();
@@ -260,11 +315,15 @@ function displayProfileById($id_user) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui modifie le profile par son Id
+ * @param type $infoProfile
+ */
 function UpdateModifiedProfile($infoProfile) {
 
     try {
-        $sql = 'UPDATE `users` SET `first_name`= :first_name_profile,`last_name`= :last_name_profile,`email`= :email_profile WHERE id_user = :id_profile';
+        $sql = 'UPDATE `users` SET `first_name`= :first_name_profile,`last_name`= :last_name_profile,`email`= :email_profile '
+                . 'WHERE id_user = :id_profile';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_profile', $infoProfile["id_profile"]);
         $dbQuery->bindParam(':first_name_profile', $infoProfile["first_name_profile"]);
@@ -275,10 +334,15 @@ function UpdateModifiedProfile($infoProfile) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui affiche le profil par le pseudo
+ * @param type $displayByPseudo
+ * @return array
+ */
 function displayProfile($displayByPseudo) {
     try {
-        $sql = "SELECT * FROM `users` WHERE pseudo = :pseudo";
+        $sql = "SELECT * FROM `users` "
+                . "WHERE pseudo = :pseudo";
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':pseudo', $displayByPseudo);
         $dbQuery->execute();
@@ -287,20 +351,27 @@ function displayProfile($displayByPseudo) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui supprime tous les articles de la base
+ */
 function DeleteAllArticles() {
     try {
-        $sql = 'UPDATE `articles` SET`is_active`= "1" WHERE 1';
+        $sql = 'UPDATE `articles` SET`is_active`= "1" '
+                . 'WHERE 1';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->execute();
     } catch (PDOException $e) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui banni un utilisateur
+ * @param type $ban
+ */
 function ban($ban) {
     try {
-        $sql = 'UPDATE `users` SET `is_active`= 0 WHERE id_user = :id_user';
+        $sql = 'UPDATE `users` SET `is_active`= 0 '
+                . 'WHERE id_user = :id_user';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_user', $ban);
         $dbQuery->execute();
@@ -308,10 +379,14 @@ function ban($ban) {
         die('Erreur : ' . $e->getMessage());
     }
 }
-
+/**
+ * Fonction qui debanni un utilisateur
+ * @param type $unban 
+*/
 function unban($unban) {
     try {
-        $sql = 'UPDATE `users` SET `is_active`= 1 WHERE id_user = :id_user';
+        $sql = 'UPDATE `users` SET `is_active`= 1 '
+                . 'WHERE id_user = :id_user';
         $dbQuery = EDatabase::getInstance()->prepare($sql);
         $dbQuery->bindParam(':id_user', $unban);
         $dbQuery->execute();

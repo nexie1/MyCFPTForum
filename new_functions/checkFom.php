@@ -9,17 +9,17 @@
  */
 
 $_SESSION["CreationInscr"] = "Empty";
-//Vérifie si on a appuer sur le bouton d'inscription
+//Vérifie si on a appuyer sur le bouton d'inscription
 if (isset($_POST["Submit"])) {
 
-    //Si l'utilisateur ne rentre pas @eduge.ch alors l'incription est incorrecte
+    //Si l'utilisateur ne rentre pas @eduge.ch alors l'inscription est incorrecte
     if (preg_match("/\S+@eduge.ch/", $_POST["email"])) {
 
         //met le mail dans un tableau
         $info["email"] = $_POST["email"];
         
         //Verifie si les 2 mots de passes sont égaux + captcha  
-        if ($_POST["CopieCaptcha"] == $_SESSION['captcha']) {
+        if ($_POST["CopyCaptcha"] == $_SESSION['captcha']) {
             if ($_POST["password"] == $_POST["passwordConfirm"]) {
 
                 //Ajoute l'utilisateur

@@ -12,13 +12,15 @@
     if (isset($_SESSION["Connected"]) && $page == "MesArticles") {
         $tableArticlesUser = getArticlesUser($_SESSION["id_user"]);
 
+        //affiche les articles qu'on a fait
         foreach ($tableArticlesUser as $value) {
             include '/new_includes/mesArticles.php';
         }
     }
-    if ($page == "Index") {////Quand l'utilisateur est pas connecté et sur la page index on prend les articles public
+    if ($page == "Index") {////Quand on est sur la page index on prend les articles public
         $tableArticlesPublic = getArticlesPublic();
 
+        //affiche les articles publics
         foreach ($tableArticlesPublic as $value) {
             include '/new_includes/articlesPublic.php';
         }

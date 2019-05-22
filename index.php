@@ -4,7 +4,7 @@
  * Auteur       : Fernandes Marco
  * Description  : Forum du CFPT
  * Version      : 1.0.0
- * Date         : 08.05.2019
+ * Date         : 07.05.2019
  * Copyright    : Fernandes Marco
  */
 session_start();
@@ -19,7 +19,7 @@ $page = (isset($_GET['page']) ? $page = $_GET['page'] : $page = "");
 if ($page == "") {
     $page = "Index";
 }
-
+//Switch de changement de page
 switch ($page) {
     case "deco":
         include_once './new_functions/deconnexion.php';
@@ -69,9 +69,6 @@ switch ($page) {
         break;
     case "Login":
         include './new_includes/formLogin.inc.php';
-        break;
-    case "deco":
-        include_once './new_functions/deconnexion.php';
         break;
     default :
     case "Index":

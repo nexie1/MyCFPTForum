@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="65485802-365c-4303-bde0-7eca27ac67f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Divers/Img/Bootstrap.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Img/NewMCD.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Img/PlanningPrevisionnel.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Img/arborescence.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Img/loginformatique_dir_couleur.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Img/tArticles.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Img/tCommentaire.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Img/tTopic.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Img/tUsers.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Note_6_Grant_DocTechnique.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/PLAN-ManuelTechnique.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/Planification.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/Critères d’évaluation Travail pratique individuel (TPI).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/Directives relatives aux travaux pratiques individuels (TPI) 2007.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/Enoncé TPI FERNANDES-JT.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/Grille d'évaluation 3.0 (1).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/OneDrive-2019-02-06.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/TPI Séance d'information - Ordonnance 2014 (v2019).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/Texte validation du mail du candidat.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/Validation du mail du candidat.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/note_6_documentation_Technique_PCBuilder.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/important/note_6_manuel_Utilisateur_PCBuilder.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/note_6_documentation_Technique_PCBuilder.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Divers/~$Planification.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/captcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/captcha.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/MyCFPTForum.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/MyCFPTForum.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/addArt.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/addArt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/addCom.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/addCom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/banUnban.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/banUnban.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/checkFom.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/checkFom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/constantConnexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/constantConnexion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/filter_input.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/filter_input.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/fonctionDatabase.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/fonctionDatabase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/modifiedArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/modifiedArticle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/modifiedComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/modifiedComment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/modifiedProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/modifiedProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_functions/pdoConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_functions/pdoConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_includes/article.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_includes/article.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_includes/displayAllArticlesByTopics.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_includes/displayAllArticlesByTopics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_includes/displayArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_includes/displayArticle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_includes/formCommentaire.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_includes/formCommentaire.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_includes/formInscription.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_includes/formInscription.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_includes/formModifProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_includes/formModifProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_includes/menu.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_includes/menu.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_includes/privateProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/new_includes/privateProfile.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="local" pattern="file[MyCFPTForum]:*" />
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/MyCFPTForum.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/dictionaries/cisco.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="169" />
+    <option name="y" value="231" />
+    <option name="width" value="986" />
+    <option name="height" value="1017" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MyCFPTForum - Copie" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cisco\Desktop" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65485802-365c-4303-bde0-7eca27ac67f3" name="Default Changelist" comment="" />
+      <created>1558516381752</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1558516381752</updated>
+      <workItem from="1558516383882" duration="1610000" />
+      <workItem from="1558525366880" duration="38000" />
+      <workItem from="1558525519728" duration="70000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1718000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="169" y="231" width="986" height="1017" extended-state="0" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37796977" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/new_includes/article.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MyCFPTForumCopy/bs/js/bootstrap.js" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <last-edited>local</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.205" />
+              </list>
+            </option>
+          </splitter-proportions>
+          <order>
+            <scope name="local" />
+          </order>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

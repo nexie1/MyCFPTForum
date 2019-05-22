@@ -19,3 +19,7 @@ define('EDB_DBNAME', "cfptforum");
 define('EDB_USER', "root");
 // Mot de passe du compte admin
 define('EDB_PASS', "");
+
+/*define('EDB_USER', "AdminTPI");
+// Mot de passe du compte admin
+define('EDB_PASS', "Super");*/

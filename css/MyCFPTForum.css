@@ -46,16 +46,13 @@ footer {
     right: 0
 }
 .fontSize{
-
     font-size: 25px;
 }
 #espacement{
-
     margin: 0;
-
 }
 
-
+/*Navigation*/
 .nav-side-menu {
     background-color: #2e353d;
     /* position: fixed;*/
@@ -138,6 +135,9 @@ footer {
     }
 }
 
+
+
+/*Concerne l'onglet qui ouvre la pop up profil*/
 .mainbody {
     background:#f0f0f0;
 }

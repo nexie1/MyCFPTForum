@@ -40,7 +40,7 @@
                         <label for="captcha"><img src="captcha.php" alt="Captcha" /></label>
                     </td>   
 
-                    <TD><input placeholder="Entrez le captcha" type = "text" name = "CopieCaptcha" value="" required tabindex="7" /></TD>
+                    <TD><input placeholder="Entrez le captcha" type = "text" name = "CopyCaptcha" value="" required tabindex="7" /></TD>
                 </TR>
                 <tr>
                     <td><input type="submit" name="Submit" value="Créer un compte" tabindex="8"></td>

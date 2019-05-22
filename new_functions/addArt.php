@@ -14,9 +14,11 @@ if (isset($_POST["SubArticle"])) {
     $id = $_GET["id_topic"];
     //prend la page sur laquelle on était juste avant
     $oldPage = $_GET["oldPage"];
-
+    //prend le nom du topic
     $nameTopic = $_GET["nameTopic"];
+    //prend la date d'aujourd'hui
     $date = date("Y-m-d H:i:s");
+    //stocke la date
     $article["creation_date"] = $date;
     //ajoute l'article
     addArticle($article, $id);

@@ -16,7 +16,7 @@
                     <div class="col-sm-10"><h1><?= $value["pseudo"] ?></h1></div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-3"><!--left col-->
+                    <div class="col-sm-3">
 
                         <div class="text-center">
                             <img src="./image/avatar_default.png" class="avatar img-circle img-thumbnail" alt="avatar"width="150px" height="150px" >

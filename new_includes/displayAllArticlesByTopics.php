@@ -24,7 +24,8 @@
                     <p class="bordure"> Publié par <a href="index.php?page=publicProfile&pseudoProfile=<?= $value["pseudo"] ?>"><?= $value["pseudo"] ?></a> <?= $value["creation_date"] ?>.</p>
                     <p><?= $value["content"] ?></p>      
 
-                    <?php if ($is_admin == 2) { ?>
+                    <?php if ($is_admin == 2 || $_SESSION["pseudo"] == $value["pseudo"]) {
+                        ?>    
                         <a href="index.php?page=ModifArticles&idModifMyArticle=<?= $value["id_article"] ?>"><input type="button" class="btn-info" name="ModifMyArticles" value="Modifier votre article"></a>
                         <a href="index.php?page=DeleteArticle&DeleteArticleById=<?= $value["id_article"] ?>"><input class="btn-danger" type="submit" name="DelMyArticles" value="Supprimer votre article"></a>
 

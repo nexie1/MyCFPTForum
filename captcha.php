@@ -21,7 +21,7 @@ function image($word) {
     $img = imagecreate($width, $height); //creer l'image
     $white = imagecolorallocate($img, 255, 255, 255);  //colore l'image en blanc
     $black = imagecolorallocate($img, 0, 0, 0);  //place un encadrer noir
-    $midHeight = ($height / 2) - 8; //regler la hauteur des chiffres dans le captcha
+    $midHeight = ($height / 2) - 8; //regle la hauteur des chiffres dans le captcha
     imagestring($img, 6, strlen($word) / 2, $midHeight, $word, $black);  //imagestring ( resource $image , int $font , int $x , int $y , string $string , int $color )
     imagerectangle($img, 1, 1, $width - 1, $height - 1, $black); // La bordure
     imagepng($img); //affiche ou sauvegarde une image au format PNG en utilisant l'image.

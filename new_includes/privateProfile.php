@@ -33,7 +33,6 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <!-- Tab panes -->
                                             <div class="tab-content">
                                                 <div role="tabpanel" class="tab-pane fade show active" id="profile">
                                                     <div class="row">
@@ -60,13 +59,13 @@
                                                             <p><?= $value["email"]; ?></p>
                                                         </div>
                                                     </div>
-                                                    <?php if ($_SESSION["pseudo"] == $value["pseudo"] ) { ?>
-                                                    <div class="row">
-                                                        <div class="col-md-8">
-                                                            <a href="index.php?page=modifProfile&idUserModif=<?= $value["id_user"]; ?>" class="btn btn-primary btn-block">Modifier</a>
+                                                    <?php if ($_SESSION["pseudo"] == $value["pseudo"]) { ?>
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <a href="index.php?page=modifProfile&idUserModif=<?= $value["id_user"]; ?>" class="btn btn-primary btn-block">Modifier</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <?php }  ?>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>

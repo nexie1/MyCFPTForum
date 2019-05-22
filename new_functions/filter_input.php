@@ -23,7 +23,6 @@ $info[$EMAIL] = (isset($_POST[$EMAIL]) ? filter_var($_POST[$EMAIL], FILTER_SANIT
 $info[$PASSWORD] = (isset($_POST[$PASSWORD]) ? hash("sha1", filter_var($_POST[$PASSWORD], FILTER_SANITIZE_STRING)) : "");
 
 //Articles
-
 $TITRE_ART = "title";
 $CONTENU_ART = "content";
 $STATUT_ART = "is_active";
